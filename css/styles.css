@@ -11,6 +11,7 @@
   /* Primary Colors */
   --color-primary-dark: hsl(342, 51%, 39%);
   --color-primary-light: hsl(331, 71%, 56%);
+  --color-accent: hsl(65, 68%, 85%);
   --color-dark: hsl(0, 0%, 0%);
   --color-medium: hsl(0, 0%, 52%);
   --color-light: hsl(0, 0%, 100%);
@@ -123,6 +124,7 @@ h6 {
 
 body {
   color: var(--color-dark);
+  background-color: var(--color-accent);
   font-family: var(--ff-sans);
   font-size: var(--fs-18);
   line-height: 1.5;
@@ -190,6 +192,7 @@ main {
 
 /****** Card Styles ******/
 .profile-card {
+  background-color: var(--color-light);
   border-radius: 4rem;
   box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.15);
   max-width: 510px;
