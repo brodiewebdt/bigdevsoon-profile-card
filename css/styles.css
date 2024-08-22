@@ -1,0 +1,251 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap'); */
+
+@font-face {
+  font-family: 'Inter';
+  src: url(../assets/fonts/Inter-VariableFont_slnt\wght.ttf) format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  /* Primary Colors */
+  --color-primary-dark: hsl(342, 51%, 39%);
+  --color-primary-light: hsl(331, 71%, 56%);
+  --color-dark: hsl(0, 0%, 0%);
+  --color-medium: hsl(0, 0%, 52%);
+  --color-light: hsl(0, 0%, 100%);
+
+  /* Font Family */
+  --ff-sans: 'Roboto Flex', sans-serif;
+
+  /* Font Size */
+  --fs-48: 3rem;
+  --fs-40: 2.5rem;
+  --fs-32: 2rem;
+  --fs-24: 1.5rem;
+  --fs-20: 1.25rem;
+  --fs-18: 1.125rem;
+  --fs-16: 1rem;
+  --fs-14: 0.875rem;
+  --fs-12: 0.75rem;
+  /* Font Weights */
+  --fw-900: 900;
+  --fw-800: 800;
+  --fw-700: 700;
+  --fw-600: 600;
+  --fw-500: 500;
+  --fw-400: 400;
+  --fw-300: 300;
+}
+
+/********* Reset **********/
+/* Stop any animation if the user has set their device to "prefers reduced motion". */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    animation-duration: 0.1s !important;
+    transition-duration: 0.1s !important;
+
+    scroll-behavior: smooth;
+  }
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  color: var(--color-dark);
+  font-family: var(--ff-sans);
+  font-size: var(--fs-18);
+  line-height: 1.5;
+}
+
+.visually-hidden {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.btn {
+  border: 1px solid transparent;
+  border-radius: 100px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: var(--fs-20);
+  font-weight: var(--fw-500);
+  padding: 0.75rem clamp(2rem, 0.316rem + 8.421vi, 3rem);
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: clamp(0.5rem, -2.026rem + 12.632vi, 2rem);
+  margin-inline: auto;
+}
+
+.btn--primary {
+  border: 1px solid currentColor;
+  background-color: var(--color-primary-light);
+  color: var(--color-light);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.btn--ghost {
+  border: 1px solid currentColor;
+  background-color: var(--color-light);
+  color: var(--color-medium);
+}
+
+.btn--ghost:hover {
+  background-color: var(--color-medium);
+  color: var(--color-light);
+}
+
+/****** Card Styles ******/
+.profile-card {
+  border-radius: 4rem;
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.15);
+  max-width: 510px;
+  overflow: hidden;
+  padding-block-end: 2.75rem;
+  text-align: center;
+}
+
+.profile-card__body {
+  padding-inline: clamp(1rem, -1.526rem + 12.632vi, 2.5rem);
+}
+
+.profile-card__header {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row: 1fr;
+}
+
+.profile-card__bg {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.profile-card__avatar {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: center;
+  align-self: start;
+  margin-block-start: 1.25rem;
+  width: clamp(6.25rem, -0.066rem + 31.579vi, 10rem);
+  aspect-ratio: 1/1;
+}
+
+.profile-card__name {
+  font-size: var(--fs-40);
+  font-weight: var(--fw-500);
+  letter-spacing: 2px;
+  line-height: 1;
+  color: var(--color-text);
+  margin-block: 2.5rem 0.25rem;
+}
+
+.profile-card__handle {
+  color: var(--color-medium);
+  font-size: var(--fs-16);
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1rem, -0.684rem + 8.421vi, 2rem);
+  margin-block: 2.5rem;
+}
+
+.profile-card__info {
+  max-width: 40ch;
+  margin-inline: auto;
+  margin-block-end: 4rem;
+}
